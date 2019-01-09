@@ -1,14 +1,20 @@
-const Discord = require('discord.js')
+const Discord = require("discord.js")
 const client = new Discord.Client();
 
 client.on('ready', () => {
-   console.log('logged in as $client.user.tag);
+    console.log(`${client.user.tag} is now online`);
 });
 
 client.on('message', msg => {
-   if (msg.content === 'ping') {
-   msg.reply('pong!)
-   }
+    if (msg.content === 'ping') {
+    msg.reply('pong!');
+    }
+});
+
+client.on('message', msg => {
+    if (msg.content === 'Bang') {
+        msg.reply('Do your chain hang low?');
+    }
 });
 
 client.login('Insert bot token here')
@@ -23,4 +29,4 @@ client.login('Insert bot token here')
 
 //then do node index.js if you put your bot token in client.login('TOKEN HERE')
 
-/then your bot is online
+//then your bot is online
